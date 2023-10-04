@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<h1>Some Memorable Movies</h1>
+	
+<h3><span class="ital">Cry Your Heart Out</span> (Jake Clements, 2021)</h3>
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_PL_img01()" src="images/cryYourHeartOut_01.jpg" alt="cryYourHeartOut-Bridge">
+<img class="filmStill" onClick="onClick_PL_img02()" src="images/cryYourHeartOut_02.jpg" alt="cryYourHeartOut_Walk">
+<img class="filmStill" onClick="onClick_PL_img03()" src="images/cryYourHeartOut_03.jpg" alt="cryYourHeartOut_Monster">
+</div>
+<p class="filmInfo" id="PL_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iure animi modi quasi amet voluptates nam cum, sapiente, officia deserunt aperiam, placeat voluptatem harum, eos excepturi atque in debitis quaerat ut ea pariatur officiis? Sunt consequatur tempora, expedita facere enim! Perferendis placeat ducimus magni nulla est itaque atque ipsam consectetur?</p>
+
+<button type="button" onClick="checkitoutHere()" id="checkitoutHere_btn">Check it out here!</button>
+	
+</body>
+
+<script>
+	
+var checkitoutHere_btn = document.getElementById("checkitoutHere_btn");
+checkitoutHere_btn.style.visibility="hidden";
+	
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false
+var PL_text = document.getElementById("PL_text") ;
+var PL00 = "Cry Your Heart Out was a project that helped me express, artistically, the anxieties I was feeling relating to multiple factors in my life at the time of creation. The film is presented not as a continuous video, but as a series of images that capture the story with included animation.";
+	
+var PL01 = "The bridge is where the audience physically sees the monster following the main character for the first time. Earlier in the film, the monster can be heard through numerous sound effects and is only seen by the character. Although the monster peaks from the sides of the bridge, it is not seen in full until later."
+
+var PL02 = "Although the monster continues to follow the main character, he decides to ignore it, instead turning to objects and clothing to try and pretend as though the creature is not following him. In this sequence, a new clothing item or object appears with the character as he passes trees obstructing the view of the camera."
+
+var PL03 = "Towards the end of the film, the main character has no choice but to confront the monster. His first instinct is to cower before it, before trying to give it a peace offering. This is the first time the audience sees the monster in full. The creature is presented through simple, hand-drawn animation."
+
+PL_text.innerHTML = PL00 ; 
+
+function onClick_PL_img01(){
+	PL_text.innerHTML = PL01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+function onClick_PL_img02(){
+	PL_text.innerHTML = PL02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+function onClick_PL_img03(){
+	PL_text.innerHTML = PL03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+
+function revealButton(){
+if(img01_clicked && img02_clicked && img03_clicked){
+	console.log("REVEAL BUTTON");
+	checkitoutHere_btn.style.visibility="visible";
+	}
+}
+	
+function checkitoutHere(){
+	window.open("https://youtu.be/SSZsfZEJ5OE", "_blank");
+}
+</script>
+
+</html>
