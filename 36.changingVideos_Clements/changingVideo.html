@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/changingVideo.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<div>
+  <video id="vid" src="video/black_numbers.mp4" onClick="switchVideo()" muted="muted" loop="loop" ></video>
+</div>
+	
+</body>
+	
+<script>
+
+var vid = document.getElementById("vid");
+	
+// references to the videos
+	
+var dog_running = "video/dog.mp4.mp4";
+var hedgehogs = "video/hedgehogs.mp4.mp4";
+var numbers_black = "video/black_numbers.mp4";
+var red_numbers = "video/red_numbers.mp4";
+
+var channel = 0;
+var pausedAt = 0;
+
+function switchVideo(){
+	channel ++;
+	pausedAt = vid.currentTime;
+	console.log(vid.currentTime);
+	
+	if (channel == 1){
+		vid.src = red_numbers;
+		vid.currentTime = pausedAt;
+	}
+	
+	if (channel == 2){
+		vid.src = numbers_black;
+		vid.currentTime = pausedAt;
+	}
+	
+	if (channel == 3){
+		vid.src = hedgehogs;
+		vid.currentTime = pausedAt;
+	}
+	
+	if (channel == 4){
+		vid.src = dog_running;
+		vid.currentTime = pausedAt;
+		channel = 0
+	}
+	
+	vid.play();
+	vid.muted = false;
+}
+
+</script>
+	
+</html>
