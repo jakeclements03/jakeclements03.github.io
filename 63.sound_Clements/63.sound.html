@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>truismsProject1</title>
+<link href="css/video.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div>
+  <video id="displayed_vid" preload="auto" muted="muted" autoplay="autoplay" loop="loop" >
+    <source src="video/truismvid1.mp4" type="video/mp4">
+  </video>
+</div>
+	
+<div class="centered_text">
+<h1 id="truism" onmouseover="onTruismText()" onmouseout="outTruismText()" onClick="changeVideo()"> A NAME MEANS A LOT JUST BY ITSELF</h1>
+</div>
+
+
+<script>
+	
+// stuff for sound
+	
+var mySound = new Audio("sounds/acSounds.mp3");
+	
+var channel = 1;
+var pausedAt = 0;
+	
+//reference to video element
+
+var displayed_video = document.getElementById("displayed_vid");	
+	
+//reference to the videos
+	
+var vid1 = "video/truismvid1.mp4";
+var vid2 = "video/truismvid2.mp4";
+	
+function onTruismText(){
+	console.log("clicked truism text");
+	document.getElementById("displayed_vid").style.filter = "invert(90%)";
+}
+	
+function outTruismText(){
+	console.log("moving out of truism text")
+	document.getElementById("displayed_vid").style.filter = "invert(0%)";
+}
+	
+function changeVideo(){
+	console.log("will change video");
+	pausedAt = displayed_video.currentTime;
+	if (channel == 0){
+		displayed_video.src = vid1
+		displayed_video.currentTime = pausedAt;
+		channel = 1;
+	}else{
+		displayed_video.src = vid2;
+		displayed_video.currentTime = pausedAt;
+		channel = 0;
+	}
+	
+	mySound.play();
+}
+</script>
+	
+	
+</body>
+</html>
