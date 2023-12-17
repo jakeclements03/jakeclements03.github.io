@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Monster</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="monsterPage">
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<pre id="txtMonster">Monster.</pre>
+
+<!-- THE VIDEO -->
+
+<div class = "vidCenter">
+  <video id="displayedVideoMonster" preload="auto" controls="controls" autoplay="autoplay" loop="loop" >
+    <source src="videos/monster.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div id="DIVforButtonsM">
+  <p>
+<button id="firstBTNMonster" onClick="buttonOne()">fight it</button>  
+</p>    
+<p>
+<button id="secondBTNMonster" onClick="buttonTwo()">run</button>    
+</p>
+<p>
+<button id="thirdBTNMonster" onClick="buttonThree()">hide</button>  
+</p>    
+</div>
+
+<script>
+
+    document.getElementById('displayedVideo').addEventListener('ended',whenVideoEnds,false);
+        
+    var firstBTN = document.getElementById("firstBTN");
+    var secondBTN = document.getElementById("secondBTN"); 
+	var thirdBTN = document.getElementById("thirdBTN");
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    firstBTN.style.display = 'none';
+    secondBTN.style.display = 'none'; 
+    thirdBTN.style.display = 'none';   
+        
+    function buttonOne() {
+        window.open ('black.html','_self',false)
+    }
+    function buttonTwo() {
+        window.open ('sleepy.html','_self',false)
+    }    
+    function buttonThree() {
+        window.open ('ok.html','_self',false)	
+    }    
+	
+</script>
+    
+</body>
+</html>

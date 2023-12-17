@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Splash2</title>
+<link href="CYOA-Choice-SampleSetUp/css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="splashPage">
+
+<div class="DIVforButtons" id="DIVforButtons">
+<p>
+<button class="splash2BTN1" id="firstBTN" onClick="buttonOne()">keep going</button>  
+</p>    
+<p>
+<button class="splash2BTN2" id="secondBTN" onClick="buttonTwo()">fly</button>    
+</p>
+</div>
+
+<script>
+        
+    var firstBTN = document.getElementById("firstBTN");
+    var secondBTN = document.getElementById("secondBTN"); 
+
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    firstBTN.style.display = 'none';
+    secondBTN.style.display = 'none'; 
+        
+		// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+    function buttonOne() {
+        window.open ('black.html','_self',false)
+    }  
+    function buttonTwo() {
+        window.open ('turbulance.html','_self',false)
+    }    
+
+        
+</script>
+    
+</body>
+</html>
