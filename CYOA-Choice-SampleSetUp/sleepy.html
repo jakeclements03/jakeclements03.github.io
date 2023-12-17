@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sleepy</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<pre>Sleepy</pre>
+	
+<div>
+  <video id="sleepyVid" src="videos/sleepy2.mp4" onClick="switchVideo()" muted="muted" loop="loop" ></video>
+</div>
+	
+<pre id="caption">Keep fucking going?</pre>
+
+<div id="DIVforButtons">
+  <p>
+<button id="firstBTNSleepy" onClick="buttonOne()">yes</button>  
+</p>    
+<p>
+<button id="secondBTNSleepy" onClick="buttonTwo()">no</button>    
+</p>
+</div>
+	
+</body>
+
+<script>
+
+var vid = document.getElementById("sleepyVid");
+	
+// references to the videos
+	
+var sleepy = "videos/sleepy2.mp4";
+var sleepy2 = "videos/sleepy.mp4";
+
+
+var channel = 0;
+var pausedAt = 0;
+
+function switchVideo(){
+	channel ++;
+	pausedAt = vid.currentTime;
+	console.log(vid.currentTime);
+	
+	if (channel == 1){
+		vid.src = sleepy2;
+		vid.currentTime = pausedAt;
+	}
+	
+	if (channel == 2){
+		vid.src = sleepy;
+		vid.currentTime = pausedAt;
+		channel = 0
+	}
+	
+	vid.play();
+	vid.muted = false;
+}
+	
+	document.getElementById('displayedVideo').addEventListener('ended',whenVideoEnds,false);
+        
+    var firstBTN = document.getElementById("firstBTN");
+    var secondBTN = document.getElementById("secondBTN"); 
+
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    firstBTN.style.display = 'none';
+    secondBTN.style.display = 'none'; 
+        
+    function buttonOne() {
+        window.open ('continue.html','_self',false)
+    }
+    function buttonTwo() {
+        window.open ('ok.html','_self',false)
+    }    
+</script>
+    </html>

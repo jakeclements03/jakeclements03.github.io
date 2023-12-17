@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Train</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- THE TITLE -->
+
+<pre class="trainCPTN">Welcome Aboard</pre>
+
+<div>    
+<img class="train" src="images/train.JPG" alt="train">
+</div>
+
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH -->
+
+<pre id="caption">
+Where will you be getting off?
+</pre>
+
+<!--buttons-->
+
+<div id="DIVforButtons">
+  <p>
+<button onClick="buttonOne()">now</button>  
+</p>    
+<p>
+<button onClick="buttonTwo()">next</button>    
+</p>
+<p>
+<button id="thirdBTN" onClick="buttonThree()">then</button>  
+</p>    
+<p>
+<button id="fourthBTN" onClick="buttonFour()">later</button>    
+</p>
+<p>
+<button id="fifthBTN" onClick="buttonFive()">never</button>    
+</p>
+</div>
+
+<script>
+
+    document.getElementById('displayedVideo').addEventListener('ended',whenVideoEnds,false);
+        
+    var firstBTN = document.getElementById("firstBTN");
+    var secondBTN = document.getElementById("secondBTN"); 
+	var thirdBTN = document.getElementById("thirdBTN");
+    var fourthBTN = document.getElementById("fourthBTN"); 
+    var fifthBTN = document.getElementById("fifthBTN"); 
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    firstBTN.style.display = 'none';
+    secondBTN.style.display = 'none'; 
+    thirdBTN.style.display = 'none';
+    fourthBTN.style.display = 'none';    
+	fifthBTN.style.display = 'none';    
+
+    function whenVideoEnds(e) {
+		// these six commands make the caption and the 5 buttons visible
+        caption.style.display = 'block';    
+        firstBTN.style.display = 'block';
+        secondBTN.style.display = 'block';
+	    thirdBTN.style.display = 'block';
+        fourthBTN.style.display = 'block';
+		fifthBTN.style.display = 'block';
+    }
+        
+    function buttonOne() {
+        window.open ('opening.html','_self',false)
+    }
+    function buttonTwo() {
+        window.open ('splash.html','_self',false)
+    }    
+    function buttonThree() {
+        window.open ('monster.html','_self',false)
+    }
+    function buttonFour() {
+        window.open ('sleepy.html','_self',false)
+    }    
+    function buttonFive() {
+		alert("please get off");	
+    }    
+	
+</script>
+    
+</body>
+</html>
